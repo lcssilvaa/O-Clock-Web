@@ -2,43 +2,59 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>O-Clock - Sistema de Ponto</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>O-Clock Web</title>
 </head>
 <body>
-  <h1>O-Clock</h1>
+  <h1>O'Clock - Sistema de Ponto</h1>
 
+  <!-- Atualizar Usuário -->
   <section>
-    <h2>Usuários</h2>
-    <form id="formUsuario">
-      <input type="text" id="nome" placeholder="Nome" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="text" id="cpf" placeholder="CPF" required>
-      <input type="password" id="senha" placeholder="Senha" required>
-      <button type="submit">Cadastrar</button>
+    <h2>Atualizar Usuário</h2>
+    <form id="formUpdateUsuario">
+      <input type="number" id="idUpdate" placeholder="ID" required>
+      <input type="text" id="nomeUpdate" placeholder="Nome">
+      <input type="email" id="emailUpdate" placeholder="Email">
+      <input type="text" id="cpfUpdate" placeholder="CPF">
+      <input type="password" id="senhaUpdate" placeholder="Senha">
+      <button type="submit">Atualizar</button>
     </form>
-    <ul id="listaUsuarios"></ul>
   </section>
 
+  <!-- Deletar Usuário -->
   <section>
-  <h2>Atualizar Usuário</h2>
-  <form id="formUpdateUsuario">
-    <input type="number" id="idUpdate" placeholder="ID do usuário" required>
-    <input type="text" id="nomeUpdate" placeholder="Novo nome">
-    <input type="email" id="emailUpdate" placeholder="Novo email">
-    <input type="text" id="cpfUpdate" placeholder="Novo CPF">
-    <input type="password" id="senhaUpdate" placeholder="Nova senha">
-    <button type="submit">Atualizar</button>
-  </form>
-</section>
+    <h2>Deletar Usuário</h2>
+    <form id="formDeleteUsuario">
+      <input type="number" id="idDelete" placeholder="ID do usuário" required>
+      <button type="submit">Deletar</button>
+    </form>
+  </section>
 
-<section>
-  <h2>Deletar Usuário</h2>
-  <form id="formDeleteUsuario">
-    <input type="number" id="idDelete" placeholder="ID do usuário" required>
-    <button type="submit">Deletar</button>
-  </form>
-</section>
+  <!-- Listar Registros de Ponto -->
+  <section>
+    <h2>Registros de Ponto</h2>
+    <button onclick="carregarRegistros()">Listar Registros</button>
+    <ul id="listaRegistros"></ul>
+  </section>
+
+  <!-- Atualizar Registro de Ponto -->
+  <section>
+    <h2>Atualizar Registro de Ponto</h2>
+    <form id="formAtualizarPonto">
+      <input type="number" id="idPontoUpdate" placeholder="ID do Ponto" required>
+      <input type="number" id="usuarioIdUpdate" placeholder="ID do Usuário" required>
+      <input type="datetime-local" id="dataHoraUpdate" required>
+      <button type="submit">Atualizar Ponto</button>
+    </form>
+  </section>
+
+  <!-- Deletar Registro de Ponto -->
+  <section>
+    <h2>Deletar Registro de Ponto</h2>
+    <form id="formDeletarPonto">
+      <input type="number" id="idPontoDelete" placeholder="ID do Ponto" required>
+      <button type="submit">Deletar</button>
+    </form>
+  </section>
 
   <script src="js/user.js"></script>
   <script src="js/ponto.js"></script>
