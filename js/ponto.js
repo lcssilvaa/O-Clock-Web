@@ -1,4 +1,4 @@
-const pontoApiUrl = "http://localhost:8080/api/ponto/bater";
+const pontoApiUrl = "http://localhost:8080/api/ponto";
 
 document.getElementById("formPonto").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -38,6 +38,7 @@ function carregarRegistros() {
       });
     })
     .catch(err => alert("Erro ao carregar registros: " + err.message));
+    
 }
 
 // Atualizar registro de ponto
