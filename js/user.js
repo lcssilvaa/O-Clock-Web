@@ -14,6 +14,8 @@ function carregarUsuarios() {
     });
 }
 
+//Cadastrar usuários
+
 document.getElementById("formUsuario").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -64,5 +66,47 @@ document.getElementById("formUpdateUsuario").addEventListener("submit", function
     .catch(err => alert(err.message));
 });
 
+// Atualizar usuário
+document.getElementById("formUpdateUsuario").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const id = document.getElementById("idUpdate").value;
+  const nome = document.getElementById("nomeUpdate").value;
+  const email = document.getElementById("emailUpdate").value;
+  const cpf = document.getElementById("cpfUpdate").value;
+  const senha = document.getElementById("senhaUpdate").value;
+
+  fetch(`${userApiUrl}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nome, email, cpf, senha })
+  })
+    .then(res => {
+      if (!res.ok) throw new Error("Erro ao atualizar.");
+      return res.json();
+    })
+    .then(() => {
+      alert("Usuário atualizado!");
+      document.getElementById("formUpdateUsuario").reset();
+    })
+    .catch(err => alert(err.message));
+});
+
+// Deletar usuário
+document.getElementById("formDeleteUsuario").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const id = document.getElementById("idDelete").value;
+
+  fetch(`${userApiUrl}/${id}`, {
+    method: "DELETE"
+  })
+    .then(res => {
+      if (!res.ok) throw new Error("Erro ao deletar.");
+      alert("Usuário deletado!");
+      document.getElementById("formDeleteUsuario").reset();
+    })
+    .catch(err => alert(err.message));
+});
 
 carregarUsuarios();
