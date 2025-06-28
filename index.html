@@ -1,70 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard App</title>
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    </head>
-<body>
-
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="page-wrapper">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo-area">
-                    <img src="images/sidebar/oclock.svg" alt="Logo da Empresa" class="oclock-icon"> </div>
-                <div class="search-bar">
-                    <img src="images/sidebar/buscar.svg" alt="Ícone de Busca" class="search-icon"> <input type="text" placeholder="Procure por..." class="search-input">
-                </div>
-            </div>
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo-area">
+            <img
+              src="images/sidebar/oclock.svg"
+              alt="Logo da Empresa"
+              class="oclock-icon"
+            />
+          </div>
+          <div class="search-bar">
+            <img
+              src="images/sidebar/buscar.svg"
+              alt="Ícone de Busca"
+              class="search-icon"
+            />
+            <input
+              type="text"
+              placeholder="Procure por..."
+              class="search-input"
+            />
+          </div>
+        </div>
 
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item active">
-                        <img src="images/sidebar/user.svg" alt="Ícone de Usuários" class="nav-icon">
-                        <span class="nav-text">Usuários</span>
-                        <img src="images/sidebar/line.svg" alt="Seta" class="nav-arrow">
-                    </li>
-                    <li class="nav-item">
-                        <img src="images/sidebar/relogio.svg" alt="Ícone de Preços" class="nav-icon">
-                        <span class="nav-text">Pontos</span>
-                        <img src="images/sidebar/line.svg" alt="Seta" class="nav-arrow">
-                    </li>
-                    <li class="nav-item">
-                        <img src="images/sidebar/relatorios.svg" alt="Ícone de Integrações" class="nav-icon">
-                        <span class="nav-text">Relatórios</span>
-                        <img src="images/sidebar/line.svg" alt="Seta" class="nav-arrow">
-                    </li>
-                </ul>
-            </nav>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <img
+                src="images/sidebar/user.svg"
+                alt="Ícone de Usuários"
+                class="nav-icon"
+              />
+              <span class="nav-text">Usuários</span>
+              <img src="images/sidebar/line.svg" alt="Seta" class="nav-arrow" />
+            </li>
+            <li class="nav-item">
+              <img
+                src="images/sidebar/relogio.svg"
+                alt="Ícone de Preços"
+                class="nav-icon"
+              />
+              <span class="nav-text">Pontos</span>
+              <img src="images/sidebar/line.svg" alt="Seta" class="nav-arrow" />
+            </li>
+            <li class="nav-item">
+              <img
+                src="images/sidebar/relatorios.svg"
+                alt="Ícone de Integrações"
+                class="nav-icon"
+              />
+              <span class="nav-text">Relatórios</span>
+              <img src="images/sidebar/line.svg" alt="Seta" class="nav-arrow" />
+            </li>
+          </ul>
+        </nav>
 
-            <hr class="divider"> <nav class="secondary-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <img src="images/sidebar/configuracoes.svg" alt="Ícone de Configurações" class="nav-icon">
-                        <span class="nav-text">Configurações</span>
-                        <img src="images/sidebar/line.svg" alt="Seta" class="nav-arrow">
-                    </li>
-                </ul>
-            </nav>
+        <hr class="divider" />
+        <nav class="secondary-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <img
+                src="images/sidebar/configuracoes.svg"
+                alt="Ícone de Configurações"
+                class="nav-icon"
+              />
+              <span class="nav-text">Configurações</span>
+              <img src="images/sidebar/line.svg" alt="Seta" class="nav-arrow" />
+            </li>
+          </ul>
+        </nav>
 
-            <div class="user-profile">
-                <img src="images/sidebar/lucas.jpg" alt="Lucas Silva Rodrigues" class="profile-picture">
-                <span class="user-name">Lucas Silva Rodrigues</span>
-                <a href="#" class="account-settings-link">Configurações da conta</a>
-                <img src="images/sidebar/line.svg" alt="Seta do Perfil" class="profile-arrow">
-            </div>
-        </aside>
+        <div class="user-profile">
+          <img
+            src="images/sidebar/lucas.jpg"
+            alt="Lucas Silva Rodrigues"
+            class="profile-picture"
+          />
+          <span class="user-name">Lucas Silva Rodrigues</span>
+          <a href="#" class="account-settings-link">Configurações da conta</a>
+          <img
+            src="images/sidebar/line.svg"
+            alt="Seta do Perfil"
+            class="profile-arrow"
+          />
+        </div>
+      </aside>
 
-        <main class="main-content">
-            <h1>Bem-vindo ao seu Dashboard!</h1>
-            <p>Este é o conteúdo principal da sua aplicação.</p>
-        </main>
+      <main class="main-content">
+          <div class="barra-pesquisa">
+            <input type="text" placeholder="Buscar..." class="campo-pesquisa" />
+            <img
+              src="images/sidebar/buscar.svg"
+              alt="Ícone de busca"
+              class="icone-pesquisa"
+            />
+          </div>
+
+        <div class="caixa-azul-escura"></div>
+
+        <p></p>
+      </main>
     </div>
-
-</body>
+  </body>
 </html>
