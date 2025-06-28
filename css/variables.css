@@ -33,4 +33,82 @@
     --spacing-xl: 28px;
     --spacing-2xl: 30px;
     --spacing-3xl: 60px;
+    /* Cores */
+    --color-dark-bg: #081028; /* Fundo principal da página */
+    --color-sidebar-bg: #123057; /* Fundo da sidebar e de alguns cards */
+    --color-element-bg-dark: #0B1739; /* Fundo de elementos escuros, campo de busca, cards de tabela */
+    --color-table-row-bg: #0A1330; /* Fundo de linhas da tabela */
+
+    --color-border-primary: #343B4F; /* Bordas principais */
+    --color-border-secondary: #7E89AC; /* Bordas secundárias, checkbox */
+
+    --color-text-white: #FFFFFF;
+    --color-text-light-blue: #AAD7FF; /* Cor de texto ativo/destaque, alguns ícones */
+    --color-text-muted: #AEB9E1; /* Cor de texto padrão, ícones, placeholders */
+    --color-text-dark: #333333; /* Cor para textos mais escuros (ex: main-header h1) */
+
+    /* Cores de Acento / Status */
+    --color-accent-purple: #CB3CFF; /* Roxo (botão, ativo, avatar) */
+    --color-accent-orange: #FDB52A; /* Laranja (novos usuários) */
+    --color-accent-green: #05C168; /* Verde (online, top users) */
+    --color-accent-blue: #086CD9; /* Azul (outros usuários) */
+    --color-status-green-light: #14CA74; /* Verde claro (texto online) */
+
+    /* Cores de Integrações (exemplos) */
+    --color-google-blue: #4285F4;
+    --color-google-green: #34A853;
+    --color-google-yellow: #FBBC05;
+    --color-google-red: #EA4335;
+    --color-linkedin-blue: #0A66C2;
+
+    /* Sombras */
+    --shadow-dark: 0px 8px 28px rgba(1, 5, 17, 0.30);
+    --shadow-card: 1px 1px 1px rgba(15.62, 24.73, 52.06, 0.40);
+    --shadow-icon-light: 0px 2px 10px rgba(25.11, 92.84, 194.44, 0.07);
+
+    /* Transparências para fundos de status badges */
+    --bg-status-green-opacity: rgba(5, 193, 104, 0.20);
+    --bg-status-gray-opacity: rgba(173.63, 185.20, 225.25, 0.20);
+
+    /* Espaçamentos (base 4px ou 8px) */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 10px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-2xl: 24px;
+    --spacing-3xl: 28px;
+    --spacing-4xl: 30px;
+    --spacing-5xl: 33px;
+    --spacing-6xl: 50px;
+    --spacing-7xl: 64px;
+
+    /* Tamanhos de Borda / Outlines */
+    --border-width-sm: 0.4px;
+    --border-width-md: 0.6px;
+    --border-width-lg: 1px;
+
+    /* Border Radius */
+    --border-radius-xs: 2px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 7px;
+    --border-radius-lg: 8px;
+    --border-radius-xl: 12px;
+    --border-radius-circle: 50%; /* Para elementos totalmente redondos */
+    --border-radius-full: 9999px; /* Para pílulas */
+
+    /* Tipografia */
+    --font-family-primary: 'Mona-Sans', sans-serif;
+    --font-family-secondary: 'Work Sans', sans-serif; /* Usado para alguns títulos e valores */
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700; /* Assumindo Montserrat 700 para títulos gerais */
+
+    /* Line Heights */
+    --line-height-sm: 14px;
+    --line-height-md: 18px;
+    --line-height-lg: 22px;
 }
