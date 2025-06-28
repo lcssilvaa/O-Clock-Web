@@ -1,0 +1,36 @@
+/* css/variables.css */
+
+:root {
+    /* Cores Neutras */
+    --neutral-800: #123057; /* Fundo da sidebar */
+    --neutral-900: #0B1739; /* Fundo do search bar e item ativo */
+    --neutral-blue-light: #AAD7FF; /* Cor de texto para itens ativos */
+    --neutral-blue-medium: #AEB9E1; /* Cor de texto para itens inativos/placeholder */
+    --white: #FFFFFF; /* Branco para texto e divisores */
+    --dark-blue-bg: #081028; /* Se for usada em algum background específico */
+    --purple-gradient: #CB3CFF; /* Para gradientes específicos */
+    --light-blue-avatar: #D1DBF9; /* Para avatar/placeholder */
+
+    /* Cores de Borda/Traçado */
+    --border-search-bar: #343B4F; /* Borda da barra de busca */
+    --border-sidebar: #0B1739; /* Borda direita da sidebar */
+    --icon-outline: #AEB9E1; /* Para outlines de ícones */
+
+    /* Sombras */
+    --shadow-03: 0px 8px 28px 0px rgba(1, 5, 17, 0.30);
+
+    /* Fontes (se você tiver uma fonte personalizada como 'Mona-Sans') */
+    /* Se você estiver usando Google Fonts, o @import seria no style.css ou no head do HTML */
+    --font-family-primary: 'Mona-Sans', sans-serif;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Espaçamentos (Opcional, mas útil para um sistema de design) */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    --spacing-xl: 28px;
+    --spacing-2xl: 30px;
+    --spacing-3xl: 60px;
+}

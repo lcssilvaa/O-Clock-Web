@@ -1,17 +1,250 @@
-/* style.css ou variaveis.css */
+/* css/style.css */
 
-:root {
-    /* Cores */
-    --neutral-800: #123057; /* Cor de fundo da sidebar */
-    /* Se houver outras cores de neutral-colors, defina-as aqui também */
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura/altura */
+}
 
-    /* Sombras */
-    --shadow-03: 0px 8px 28px 0px rgba(1, 5, 17, 0.30); /* Sombra conforme Figma */
+body {
+    font-family: var(--font-family-primary); /* Usando a variável da fonte */
+    font-weight: var(--font-weight-medium);
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Um fundo neutro para a página */
+}
 
-    /* Outras variáveis que você já tem ou vai adicionar */
-    --neutral-900: #0B1739;
-    --neutral-blue-light: #AAD7FF;
-    --neutral-blue-medium: #AEB9E1;
-    --white: #FFFFFF;
-    /* etc. */
+/* Page Wrapper (Contém Sidebar e Conteúdo Principal) */
+.page-wrapper {
+    display: flex; /* Faz a sidebar e o conteúdo principal ficarem lado a lado */
+    min-height: 100vh; /* Garante que o wrapper ocupe a altura total da viewport */
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    min-height: 100vh; /* Garante que a sidebar ocupe toda a altura da viewport */
+    background: var(--neutral-800);
+    box-shadow: var(--shadow-03);
+    border-right: 0.60px solid var(--border-sidebar); /* A linha vertical */
+    position: sticky; /* Faz a sidebar ficar no lugar ao rolar a página */
+    top: 0; /* Anexa ao topo da viewport */
+    left: 0; /* Anexa à esquerda da viewport */
+    flex-shrink: 0; /* Impede que a sidebar encolha */
+
+    display: flex;
+    flex-direction: column; /* Organiza os elementos internos verticalmente */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    padding-top: 38.28px; /* Espaço do topo */
+}
+
+/* Sidebar Header (Logo e Barra de Busca) */
+.sidebar-header {
+    width: 100%;
+    padding: 0 var(--spacing-xl); /* Espaçamento lateral */
+    margin-bottom: var(--spacing-3xl); /* Espaço entre header e navegação */
+}
+
+.logo-area {
+    margin-bottom: var(--spacing-lg); /* Espaço entre logo e search bar */
+}
+
+.oclock.icon {
+width: 184px;
+height: 49px;
+flex-shrink: 0;
+aspect-ratio: 184/49;
+}
+
+.search-bar {
+    width: 100%;
+    height: 42px;
+    background: var(--neutral-900);
+    border-radius: 4px;
+    border: 0.60px solid var(--border-search-bar);
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o ícone e input */
+    gap: var(--spacing-sm); /* Espaço entre ícone e input */
+    padding: 0 10px; /* Padding interno */
+}
+
+.search-icon {
+    width: 16px;
+    height: 16px;
+    /* Ajuste cor/tamanho do ícone conforme necessário */
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    outline: none; /* Remove a borda de foco padrão */
+    color: var(--neutral-blue-medium);
+    font-size: 12px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    line-height: 14px;
+    flex-grow: 1; /* Faz o input ocupar o máximo de espaço possível */
+}
+
+.search-input::placeholder {
+    color: var(--neutral-blue-medium);
+}
+
+/* Navegação (Principal e Secundária) */
+.main-nav,
+.secondary-nav {
+    width: 100%;
+    padding: 0 var(--spacing-xl); /* Espaçamento lateral */
+}
+
+.main-nav {
+    margin-bottom: var(--spacing-2xl); /* Espaço entre main-nav e o divider */
+}
+
+.nav-list {
+    list-style: none; /* Remove bolinhas da lista */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Itens da lista um abaixo do outro */
+    gap: var(--spacing-sm); /* Espaço entre os itens da lista (LI) */
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente ícone, texto e seta */
+    gap: var(--spacing-sm); /* Espaço entre ícone/texto */
+    padding: 10px var(--spacing-xl); /* Padding interno do item, ajuste se precisar */
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Transição suave para hover/ativo */
+    width: 100%;
+}
+
+.nav-item:hover {
+    background-color: var(--neutral-900); /* Cor de fundo ao passar o mouse */
+}
+
+.nav-icon {
+    width: 14px;
+    height: 14px;
+    /* Adicione estilos específicos para seus ícones se eles forem SVGs ou forem feitos de divs */
+}
+
+.nav-text {
+    font-size: 14px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    line-height: 14px;
+    flex-grow: 1; /* Faz o texto ocupar o máximo de espaço */
+}
+
+/* Cores específicas para os textos de navegação */
+.main-nav .nav-item .nav-text { /* Estilo padrão para main-nav */
+    color: var(--neutral-blue-light);
+}
+.main-nav .nav-item:nth-child(3) .nav-text { /* Integrations (se tiver cor diferente) */
+    color: var(--neutral-blue-medium);
+}
+.secondary-nav .nav-item .nav-text {
+    color: var(--neutral-blue-medium); /* Estilo padrão para secondary-nav */
+}
+
+.nav-arrow {
+    width: 12px;
+    height: 12px;
+    margin-left: auto; /* Empurra a seta para a direita */
+    /* Se a seta for um SVG, use a tag img e ajuste o src */
+    /* Se for feita com CSS (como um pseudoelemento), adicione aqui: */
+    /*
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-top: 1px solid var(--neutral-blue-medium);
+        border-right: 1px solid var(--neutral-blue-medium);
+        transform: rotate(45deg);
+        top: 3px;
+        left: 3px;
+    }
+    */
+}
+
+
+/* Estilo para o item de navegação ativo */
+.nav-item.active {
+    background-color: var(--neutral-900);
+}
+.nav-item.active .nav-text {
+    color: var(--neutral-blue-light);
+}
+.nav-item.active .nav-icon {
+    /* Se o ícone mudar de cor quando ativo, adicione aqui */
+}
+
+/* Linha Divisória Horizontal */
+.divider {
+    width: calc(100% - (var(--spacing-xl) * 2)); /* Largura total menos 2x o padding lateral */
+    height: 1px;
+    background-color: var(--white);
+    opacity: 0.20;
+    border: none; /* Remove a borda padrão do <hr> */
+    margin: var(--spacing-2xl) auto; /* Espaçamento vertical e centraliza horizontalmente */
+}
+
+/* Perfil do Usuário */
+.user-profile {
+    width: 100%;
+    padding: var(--spacing-lg) 33px; /* Espaçamento interno */
+    display: flex;
+    flex-direction: column; /* Itens do perfil um abaixo do outro */
+    align-items: center; /* Centraliza horizontalmente */
+    gap: var(--spacing-xs); /* Espaço entre os itens do perfil */
+    margin-top: auto; /* Empurra o perfil para o final da sidebar */
+}
+
+.profile-picture {
+    width: 35px; /* Tamanho da imagem de perfil */
+    height: 45px;
+    border-radius: 50%; /* Faz a imagem ser redonda */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    margin-bottom: var(--spacing-xs); /* Espaço antes do nome */
+}
+
+.user-name {
+    color: var(--white);
+    font-size: 14px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    line-height: 14px;
+}
+
+.account-settings-link {
+    color: var(--neutral-blue-medium);
+    font-size: 10px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    line-height: 14px;
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    cursor: pointer;
+}
+
+.profile-arrow {
+    width: 12px;
+    height: 12px;
+    margin-top: var(--spacing-xs); /* Espaçamento da seta */
+    /* Estilos se for um SVG ou feito com CSS */
+}
+
+
+/* Main Content (Conteúdo Principal da Página) */
+.main-content {
+    flex-grow: 1; /* Ocupa todo o espaço restante após a sidebar */
+    padding: 20px; /* Um padding básico para o conteúdo */
+    background-color: #f9f9f9; /* Uma cor de fundo para o main content */
+    color: #333; /* Cor de texto padrão */
 }
