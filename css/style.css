@@ -1,24 +1,17 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 30px;
-  background-color: #f4f4f4;
-}
+/* style.css ou variaveis.css */
 
-h1, h2 {
-  color: #333;
-}
+:root {
+    /* Cores */
+    --neutral-800: #123057; /* Cor de fundo da sidebar */
+    /* Se houver outras cores de neutral-colors, defina-as aqui também */
 
-form {
-  margin-bottom: 20px;
-}
+    /* Sombras */
+    --shadow-03: 0px 8px 28px 0px rgba(1, 5, 17, 0.30); /* Sombra conforme Figma */
 
-input, button {
-  padding: 10px;
-  margin: 5px;
-  font-size: 16px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
+    /* Outras variáveis que você já tem ou vai adicionar */
+    --neutral-900: #0B1739;
+    --neutral-blue-light: #AAD7FF;
+    --neutral-blue-medium: #AEB9E1;
+    --white: #FFFFFF;
+    /* etc. */
 }
