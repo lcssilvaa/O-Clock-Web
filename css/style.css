@@ -1,290 +1,430 @@
 /* css/style.css */
 
-/* Reset Básico e Fontes */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura/altura */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
-/* Page Wrapper (Contém Sidebar e Conteúdo Principal) */
 .page-wrapper {
-    display: flex; /* Faz a sidebar e o conteúdo principal ficarem lado a lado */
-    min-height: 100vh; /* Garante que o wrapper ocupe a altura total da viewport */
-    width: 100%;
-    background-color: white;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
 }
 
-/* Sidebar */
 .sidebar {
-    width: 300px;
-    min-height: 100vh; /* Garante que a sidebar ocupe toda a altura da viewport */
-    background: var(--neutral-800);
-    box-shadow: var(--shadow-03);
-    border-right: 0.60px solid var(--border-sidebar); /* A linha vertical */
-    position: sticky; /* Faz a sidebar ficar no lugar ao rolar a página */
-    top: 0; /* Anexa ao topo da viewport */
-    left: 0; /* Anexa à esquerda da viewport */
-    flex-shrink: 0; /* Impede que a sidebar encolha */
+  width: 300px;
+  min-height: 100vh;
+  background: var(--neutral-800);
+  box-shadow: var(--shadow-03);
+  border-right: 0.6px solid var(--border-sidebar);
+  position: sticky;
+  top: 0;
+  left: 0;
+  flex-shrink: 0;
 
-    display: flex;
-    flex-direction: column; /* Organiza os elementos internos verticalmente */
-    align-items: flex-start; /* Alinha o conteúdo à esquerda */
-    padding-top: 38.28px; /* Espaço do topo */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 38.28px;
 }
 
-/* Sidebar Header (Logo e Barra de Busca) */
 .sidebar-header {
-    width: 100%;
-    padding: 0 var(--spacing-xl); /* Espaçamento lateral */
-    margin-bottom: var(--spacing-3xl); /* Espaço entre header e navegação */
+  width: 100%;
+  padding: 0 var(--spacing-xl);
+  margin-bottom: var(--spacing-3xl);
 }
 
 .logo-area {
-     width: 100%; /* Garante que a área do logo ocupe toda a largura disponível no sidebar-header */
-    text-align: center; /* Centraliza horizontalmente o conteúdo inline (como a imagem) dentro desta div */
-    margin-bottom: var(--spacing-lg);
+  width: 100%;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
 }
 
-.oclock.icon {
-width: 184px;
-height: 49px;
-object-fit: contain; /* Garante que o logo caiba na área sem cortar */
-    display: inline-block;
+.oclock-icon {
+  width: 184px;
+  height: 49px;
+  object-fit: contain;
+  display: inline-block;
 }
 
 .search-bar {
-    width: 100%;
-    height: 42px;
-    background: var(--neutral-900);
-    border-radius: 4px;
-    border: 0.60px solid var(--border-search-bar);
-    display: flex;
-    align-items: center; /* Centraliza verticalmente o ícone e input */
-    gap: var(--spacing-sm); /* Espaço entre ícone e input */
-    padding: 0 10px; /* Padding interno */
+  width: 100%;
+  height: 42px;
+  background: var(--neutral-900);
+  border-radius: 4px;
+  border: 0.6px solid var(--border-search-bar);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0 10px;
 }
 
 .search-icon {
-    width: 16px;
-    height: 16px;
-    /* Ajuste cor/tamanho do ícone conforme necessário */
+  width: 16px;
+  height: 16px;
 }
 
 .search-input {
-    background: transparent;
-    border: none;
-    outline: none; /* Remove a borda de foco padrão */
-    color: var(--neutral-blue-medium);
-    font-size: 12px;
-    font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-medium);
-    line-height: 14px;
-    flex-grow: 1; /* Faz o input ocupar o máximo de espaço possível */
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--neutral-blue-medium);
+  font-size: 12px;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  line-height: 14px;
+  flex-grow: 1;
 }
 
 .search-input::placeholder {
-    color: var(--neutral-blue-medium);
+  color: var(--neutral-blue-medium);
 }
 
-/* Navegação (Principal e Secundária) */
 .main-nav,
 .secondary-nav {
-    width: 100%;
-    padding: 0 var(--spacing-xl); /* Espaçamento lateral */
+  width: 100%;
+  padding: 0 var(--spacing-xl);
 }
 
 .main-nav {
-    margin-bottom: var(--spacing-2xl); /* Espaço entre main-nav e o divider */
+  margin-bottom: var(--spacing-2xl);
 }
 
 .nav-list {
-    list-style: none; /* Remove bolinhas da lista */
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Itens da lista um abaixo do outro */
-    gap: var(--spacing-sm); /* Espaço entre os itens da lista (LI) */
-    width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
 }
 
 .nav-item {
-    display: flex;
-    align-items: center; /* Centraliza verticalmente ícone, texto e seta */
-    gap: var(--spacing-sm); /* Espaço entre ícone/texto */
-    padding: 10px var(--spacing-xl); /* Padding interno do item, ajuste se precisar */
-    border-radius: 7px;
-    cursor: pointer;
-    transition: background-color 0.2s ease; /* Transição suave para hover/ativo */
-    width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 10px var(--spacing-xl);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
 }
 
 .nav-item:hover {
-    background-color: var(--neutral-900); /* Cor de fundo ao passar o mouse */
+  background-color: var(--neutral-900);
 }
 
 .nav-icon {
-    width: 14px;
-    height: 14px;
-    /* Adicione estilos específicos para seus ícones se eles forem SVGs ou forem feitos de divs */
+  width: 14px;
+  height: 14px;
 }
 
 .nav-text {
-    font-size: 14px;
-    font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-medium);
-    line-height: 14px;
-    flex-grow: 1; /* Faz o texto ocupar o máximo de espaço */
+  font-size: 14px;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  line-height: 14px;
+  flex-grow: 1;
 }
 
-/* Cores específicas para os textos de navegação */
-.main-nav .nav-item .nav-text { /* Estilo padrão para main-nav */
-    color: var(--neutral-blue-light);
+.main-nav .nav-item .nav-text {
+  color: var(--neutral-blue-light);
 }
-.main-nav .nav-item:nth-child(3) .nav-text { /* Integrations (se tiver cor diferente) */
-    color: var(--neutral-blue-medium);
+.main-nav .nav-item:nth-child(3) .nav-text {
+  color: var(--neutral-blue-medium);
 }
 .secondary-nav .nav-item .nav-text {
-    color: var(--neutral-blue-medium); /* Estilo padrão para secondary-nav */
+  color: var(--neutral-blue-medium);
 }
 
 .nav-arrow {
-    width: 12px;
-    height: 12px;
-    margin-left: auto; /* Empurra a seta para a direita */
-    /* Se a seta for um SVG, use a tag img e ajuste o src */
-    /* Se for feita com CSS (como um pseudoelemento), adicione aqui: */
-    /*
-    position: relative;
-    &::before {
-        content: '';
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        border-top: 1px solid var(--neutral-blue-medium);
-        border-right: 1px solid var(--neutral-blue-medium);
-        transform: rotate(45deg);
-        top: 3px;
-        left: 3px;
-    }
-    */
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
 }
 
-
-/* Estilo para o item de navegação ativo */
 .nav-item.active {
-    background-color: var(--neutral-900);
+  background-color: var(--neutral-900);
 }
 .nav-item.active .nav-text {
-    color: var(--neutral-blue-light);
+  color: var(--neutral-blue-light);
 }
 .nav-item.active .nav-icon {
-    /* Se o ícone mudar de cor quando ativo, adicione aqui */
 }
 
-/* Linha Divisória Horizontal */
 .divider {
-    width: calc(100% - (var(--spacing-xl) * 2)); /* Largura total menos 2x o padding lateral */
-    height: 1px;
-    background-color: var(--white);
-    opacity: 0.20;
-    border: none; /* Remove a borda padrão do <hr> */
-    margin: var(--spacing-2xl) auto; /* Espaçamento vertical e centraliza horizontalmente */
+  width: calc(100% - (var(--spacing-xl) * 2));
+  height: 1px;
+  background-color: var(--white);
+  opacity: 0.2;
+  border: none;
+  margin: var(--spacing-2xl) auto;
 }
 
-/* Perfil do Usuário */
 .user-profile {
-    width: 100%;
-    padding: var(--spacing-lg) 33px; /* Espaçamento interno */
-    display: flex;
-    flex-direction: column; /* Itens do perfil um abaixo do outro */
-    align-items: center; /* Centraliza horizontalmente */
-    gap: var(--spacing-xs); /* Espaço entre os itens do perfil */
-    margin-top: auto; /* Empurra o perfil para o final da sidebar */
+  width: 100%;
+  padding: var(--spacing-lg) 33px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: auto;
 }
 
 .profile-picture {
-    width: 35px; /* Tamanho da imagem de perfil */
-    height: 45px;
-    border-radius: 50%; /* Faz a imagem ser redonda */
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
-    margin-bottom: var(--spacing-xs); /* Espaço antes do nome */
+  width: 35px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--spacing-xs);
 }
 
 .user-name {
-    color: var(--white);
-    font-size: 14px;
-    font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-medium);
-    line-height: 14px;
+  color: var(--white);
+  font-size: 14px;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  line-height: 14px;
 }
 
 .account-settings-link {
-    color: var(--neutral-blue-medium);
-    font-size: 10px;
-    font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-medium);
-    line-height: 14px;
-    text-decoration: none; /* Remove sublinhado padrão do link */
-    cursor: pointer;
+  color: var(--neutral-blue-medium);
+  font-size: 10px;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  line-height: 14px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .profile-arrow {
-    width: 12px;
-    height: 12px;
-    margin-top: var(--spacing-xs); /* Espaçamento da seta */
-    /* Estilos se for um SVG ou feito com CSS */
+  width: 12px;
+  height: 12px;
+  margin-top: var(--spacing-xs);
 }
 
-
-/* Main Content (Conteúdo Principal da Página) */
 .main-content {
-    flex-grow: 1; /* Ocupa todo o espaço restante após a sidebar */
-    padding: 20px; /* Um padding básico para o conteúdo */
-    background-color: #081028; /* Uma cor de fundo para o main content */
-    color: #333; /* Cor de texto padrão */
+  flex-grow: 1;
+  padding: 20px; /* Mantém o padding geral para o main-content */
+  background-color: #081028;
+  color: #333;
 }
 
 .barra-pesquisa {
-    display: flex;
-    align-items: center;
-    width: 20%;
-    height: 43px;
-    background: #0B1739;
-    border-radius: 4px;
-    border: 0.6px solid #343B4F;
-    padding: 0 10px;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 20%; /* Ajuste a largura conforme necessário */
+  height: 43px;
+  background: #0b1739;
+  border-radius: 4px;
+  border: 0.6px solid #343b4f;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .campo-pesquisa {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .icone-pesquisa {
-    width: 16px;
-    height: 16px;
-    margin-left: 0px;
+  width: 16px;
+  height: 16px;
+  margin-left: 0px;
 }
 
+/* A caixa azul escura grande */
 .caixa-azul-escura {
-    width: 95%;
-    height: 90%;
-    background-color: #0B1739;
-    box-shadow: 1px 1px 1px rgba(16, 25, 52, 0.4);
-    border-radius: 12px;
-    border: 0.6px solid #343B4F;
-    margin-top: 20x;
+  width: 100%;
+  /* REMOVIDO: height: 90%; - Altura será dinâmica */
+  background-color: #0b1739;
+  box-shadow: 1px 1px 1px rgba(16, 25, 52, 0.4);
+  border-radius: 12px;
+  border: 0.6px solid #343b4f;
+  margin-top: 20px; /* Espaço entre os cards de estatísticas e esta caixa */
+  padding: 20px; /* Mantém o padding interno para o conteúdo dela */
+}
+
+.topo-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-bottom: 20px; /* Espaço entre o topo-conteudo e os cards de estatísticas */
+}
+
+.titulo-secao {
+  color: #aad7ff;
+  font-size: 23px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+.caixa-header {
+  width: 100%;
+  /* Não precisa de padding aqui, pois já está no .caixa-azul-escura */
+}
+
+.titulo-caixa {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.bordered-element {
+  width: 100%;
+  height: 1px;
+  background-color: #343b4f;
+  opacity: 0.6;
+  margin-bottom: 0; /* Removido margin-bottom aqui, pois não precisa de espaço extra antes dos cards */
+}
+
+/* Contêiner principal para os cards de estatísticas */
+
+
+/* Estilo base para cada card de estatística */
+.stats-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background-color: #0B1739;
+  border: 0.6px solid #343B4F;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 1px 1px rgba(16, 25, 52, 0.4);
+}
+
+.stat-card-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-card-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon-img {
+  width: 22px;
+  height: 22px;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.stat-value {
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Cores dos ícones */
+.purple-bg {
+  background-color: #6A0DAD; /* ou outro tom de roxo desejado */
+}
+
+.orange-bg {
+  background-color: #FF8C00; /* ou outro tom de laranja desejado */
+}
+
+.tag-item {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.tag-item[data-size="small"] {
+    /* Styles for small tag items */
+}
+
+.tag-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.tag-icon {
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+
+.tag-text {
+    color: var(--neutral-blue-light);
+    font-size: 10px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-bold);
+    line-height: 10px;
+    word-wrap: break-word;
+}
+
+.tag-indicator {
+    width: 8px;
+    height: 8px;
+    position: relative;
+    opacity: 0.80;
+    overflow: hidden;
+}
+
+.tag-indicator.arrow-down {
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
+
+.tag-indicator.arrow-up {
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.tag-indicator > div {
+    width: 4px;
+    height: 2px;
+    left: 2px;
+    top: 3px;
+    position: absolute;
+    outline: 0.80px solid var(--neutral-blue-medium);
+    outline-offset: -0.40px;
 }
