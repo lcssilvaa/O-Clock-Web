@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard App</title>
+    <title>O'Clock</title>
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -102,6 +102,9 @@
       </aside>
 
       <main class="main-content">
+        <div class="topo-conteudo">
+          <h2 class="titulo-secao">Usuários</h2>
+
           <div class="barra-pesquisa">
             <input type="text" placeholder="Buscar..." class="campo-pesquisa" />
             <img
@@ -110,10 +113,58 @@
               class="icone-pesquisa"
             />
           </div>
+        </div>
 
-        <div class="caixa-azul-escura"></div>
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-card-icon-wrapper purple-bg">
+                <img
+                  src="images/usuarios/total-card.svg"
+                  alt="Total de usuários"
+                  class="stat-icon-img"
+                />
+              </div>
+              <div class="stat-info">
+                <div class="stat-title">Total de usuários</div>
+                <div class="stat-value">250</div>
+              </div>
+            </div>
+          </div>
 
-        <p></p>
+          <div class="divider-line"></div>
+
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-card-icon-wrapper orange-bg">
+                <img
+                  src="images/usuarios/admin-card.svg"
+                  alt="Administradores"
+                  class="stat-icon-img"
+                />
+              </div>
+              <div class="stat-info">
+                <div class="stat-title">Administradores</div>
+                <div class="stat-value">15</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="caixa-azul-escura">
+          <div class="caixa-header">
+            <h2 class="titulo-caixa">Todos os usuários</h2>
+            <div class="bordered-element"></div>
+            <div class="tag-item" data-size="small">
+              <div class="tag-content">
+                <div class="tag-icon"></div>
+                <div class="tag-text">E-mail</div>
+              </div>
+              <div class="tag-indicator arrow-down"></div>
+              <div class="tag-indicator arrow-up"></div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   </body>
