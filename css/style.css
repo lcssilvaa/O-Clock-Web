@@ -250,7 +250,6 @@ body {
 /* A caixa azul escura grande */
 .caixa-azul-escura {
   width: 100%;
-  /* REMOVIDO: height: 90%; - Altura será dinâmica */
   background-color: #0b1739;
   box-shadow: 1px 1px 1px rgba(16, 25, 52, 0.4);
   border-radius: 12px;
@@ -310,7 +309,7 @@ body {
   border: 0.6px solid #343B4F;
   border-radius: 10px;
   padding: 15px 20px;
-  width: 230px;
+  width: 250px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -366,65 +365,26 @@ body {
   background-color: #FF8C00; /* ou outro tom de laranja desejado */
 }
 
-.tag-item {
-    width: 100%;
-    height: 100%;
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: var(--spacing-sm);
+.tabela-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #aad7ff;
 }
 
-.tag-item[data-size="small"] {
-    /* Styles for small tag items */
+.tabela-usuarios th,
+.tabela-usuarios td {
+  padding: 12px;
+  border-bottom: 1px solid #343b4f;
+  text-align: left;
+  font-size: 13px;
 }
 
-.tag-content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: var(--spacing-xs);
+.tabela-usuarios th img {
+  width: 14px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
-.tag-icon {
-    width: 10px;
-    height: 10px;
-    position: relative;
-}
 
-.tag-text {
-    color: var(--neutral-blue-light);
-    font-size: 10px;
-    font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-bold);
-    line-height: 10px;
-    word-wrap: break-word;
-}
-
-.tag-indicator {
-    width: 8px;
-    height: 8px;
-    position: relative;
-    opacity: 0.80;
-    overflow: hidden;
-}
-
-.tag-indicator.arrow-down {
-    transform: rotate(-90deg);
-    transform-origin: top left;
-}
-
-.tag-indicator.arrow-up {
-    transform: rotate(90deg);
-    transform-origin: top left;
-}
-
-.tag-indicator > div {
-    width: 4px;
-    height: 2px;
-    left: 2px;
-    top: 3px;
-    position: absolute;
-    outline: 0.80px solid var(--neutral-blue-medium);
-    outline-offset: -0.40px;
-}
