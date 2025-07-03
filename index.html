@@ -151,6 +151,10 @@
           </div>
         </div>
 
+        <div class="botao-wrapper">
+          <button class="botao"><span>Adicionar Usuário</span></button>
+        </div>
+
         <div class="caixa-azul-escura">
           <div class="caixa-header">
             <h2 class="titulo-caixa">Todos os usuários</h2>
@@ -200,10 +204,10 @@
             const linha = document.createElement('tr');
             linha.innerHTML = `
               <td>${usuario.email || ''}</td>
-              <td>${usuario.nomeCompleto || ''}</td>
+              <td>${usuario.nome || ''}</td>
               <td>${usuario.cpf || ''}</td>
               <td>${usuario.permissao || ''}</td>
-              <td>${usuario.jornadaDiariaHoras || ''}</td>
+              <td>${usuario.jornada || ''}</td>
             `;
             tbody.appendChild(linha);
           });
