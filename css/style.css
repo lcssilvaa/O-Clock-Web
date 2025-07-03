@@ -368,7 +368,7 @@ body {
 .tabela-usuarios {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 5px;
   font-family: "Montserrat", sans-serif;
   color: #aad7ff;
 }
@@ -386,5 +386,47 @@ body {
   margin-right: 6px;
   vertical-align: middle;
 }
+
+.botao-wrapper {
+  padding: 0 16px;
+  background: #123057;
+  border-radius: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Estilo do botão */
+.botao {
+  padding: 0px 16px;
+  background: #123057;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 127px;
+  gap: 48px;
+  transition: background-color 0.2s ease;
+}
+
+/* Efeito hover opcional */
+.botao:hover {
+  background-color: #0e2648;
+}
+
+.botao span {
+  color: white;
+font-size: 10px;
+font-family: Montserrat;
+font-weight: 500;
+line-height: 14px;
+word-wrap: break-word
+}
+
+
 
 
