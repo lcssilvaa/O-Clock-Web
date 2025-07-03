@@ -155,17 +155,66 @@
           <div class="caixa-header">
             <h2 class="titulo-caixa">Todos os usuários</h2>
             <div class="bordered-element"></div>
-            <div class="tag-item" data-size="small">
-              <div class="tag-content">
-                <div class="tag-icon"></div>
-                <div class="tag-text">E-mail</div>
-              </div>
-              <div class="tag-indicator arrow-down"></div>
-              <div class="tag-indicator arrow-up"></div>
-            </div>
+
+            <table class="tabela-usuarios">
+              <thead>
+                <tr>
+                  <th><img src="images/usuarios/email.svg" alt="Email" /> E-mail</th>
+                  <th><img src="images/usuarios/nome.svg" alt="Nome" /> Nome</th>
+                  <th><img src="images/usuarios/CPF.svg" alt="CPF" /> CPF</th>
+                  <th><img src="images/usuarios/permissao.svg" alt="Permissão" /> Permissão</th>
+                  <th><img src="images/usuarios/jornada.svg" alt="Jornada" /> Jornada</th>
+                </tr>
+              </thead>
+              <tbody id="usuarios-tbody">
+              </tbody>
+            </table>
           </div>
         </div>
       </main>
     </div>
+
+    <script type="module">
+      import UsuariosService from './js/UsuariosService.js';
+
+      const service = new UsuariosService('http://localhost:8080/api/users');
+
+      async function carregarTabelaUsuarios() {
+        try {
+          const usuarios = await service.listarUsuarios();
+          const tbody = document.getElementById('usuarios-tbody');
+          tbody.innerHTML = '';
+
+          // Atualizar contadores
+          const totalUsuarios = usuarios.length;
+          const administradores = usuarios.filter(u => u.permissao === 'ADMIN' || u.permissao === 'admin').length;
+          
+          // Atualizar os valores nos cards
+          const totalElement = document.querySelector('.stat-card:nth-child(1) .stat-value');
+          const adminElement = document.querySelector('.stat-card:nth-child(3) .stat-value');
+          
+          if (totalElement) totalElement.textContent = totalUsuarios;
+          if (adminElement) adminElement.textContent = administradores;
+
+          usuarios.forEach(usuario => {
+            const linha = document.createElement('tr');
+            linha.innerHTML = `
+              <td>${usuario.email || ''}</td>
+              <td>${usuario.nomeCompleto || ''}</td>
+              <td>${usuario.cpf || ''}</td>
+              <td>${usuario.permissao || ''}</td>
+              <td>${usuario.jornadaDiariaHoras || ''}</td>
+            `;
+            tbody.appendChild(linha);
+          });
+        } catch (error) {
+          console.error('Erro ao carregar usuários:', error);
+          const tbody = document.getElementById('usuarios-tbody');
+          tbody.innerHTML = '<tr><td colspan="5">Erro ao carregar dados</td></tr>';
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', carregarTabelaUsuarios);
+    </script>
   </body>
 </html>
